@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  VKCLoginScreenVC.h
 //  VKClient
 //
 //  Created by Кудина  on 14.07.2018.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface VKCLoginScreenVC : UIViewController
 
 @end
-
