@@ -1,13 +1,13 @@
 //
-//  VKService.h
+//  VKCLoginScreenVC.h
 //  VKClient
 //
 //  Created by Кудина  on 14.07.2018.
 //  Copyright © 2018 KudinaAG. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface VKService : NSObject
+@interface VKCLoginVC : UIViewController
 
 @end

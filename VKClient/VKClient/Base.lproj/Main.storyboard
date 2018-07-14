@@ -27,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="166" y="157"/>
         </scene>
-        <!--Login ScreenVC-->
+        <!--LoginVC-->
         <scene sceneID="ts6-AI-HKg">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iza-DH-cgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="wj1-xf-iKo" customClass="VKCLoginScreenVC" sceneMemberID="viewController">
+                <viewController id="wj1-xf-iKo" customClass="VKCLoginVC" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="z6f-lx-Fr8"/>
                 </viewController>
             </objects>

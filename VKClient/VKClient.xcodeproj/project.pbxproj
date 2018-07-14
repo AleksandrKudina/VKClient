@@ -13,9 +13,9 @@
 		501BE15C20FA68F100A078F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501BE15B20FA68F100A078F2 /* Assets.xcassets */; };
 		501BE15F20FA68F100A078F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501BE15D20FA68F100A078F2 /* LaunchScreen.storyboard */; };
 		501BE16220FA68F100A078F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 501BE16120FA68F100A078F2 /* main.m */; };
-		50E16FF420FA7F5500330C27 /* VKCLoginScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E16FF220FA7F5500330C27 /* VKCLoginScreenVC.m */; };
-		50E16FF520FA7F5500330C27 /* VKCLoginScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E16FF320FA7F5500330C27 /* VKCLoginScreenVC.xib */; };
-		50E16FFB20FA84E600330C27 /* VKService.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E16FFA20FA84E600330C27 /* VKService.m */; };
+		50E16FF420FA7F5500330C27 /* VKCLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E16FF220FA7F5500330C27 /* VKCLoginVC.m */; };
+		50E16FF520FA7F5500330C27 /* VKCLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E16FF320FA7F5500330C27 /* VKCLoginVC.xib */; };
+		50E16FFB20FA84E600330C27 /* VKCService.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E16FFA20FA84E600330C27 /* VKCService.m */; };
 		E089BC976E483CFF4B4467AC /* Pods_VKClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0677F12A4EA6C0BCEA115A /* Pods_VKClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,11 +29,11 @@
 		501BE15E20FA68F100A078F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		501BE16020FA68F100A078F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		501BE16120FA68F100A078F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		50E16FF120FA7F5500330C27 /* VKCLoginScreenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKCLoginScreenVC.h; sourceTree = "<group>"; };
-		50E16FF220FA7F5500330C27 /* VKCLoginScreenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKCLoginScreenVC.m; sourceTree = "<group>"; };
-		50E16FF320FA7F5500330C27 /* VKCLoginScreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VKCLoginScreenVC.xib; sourceTree = "<group>"; };
-		50E16FF920FA84E600330C27 /* VKService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKService.h; sourceTree = "<group>"; };
-		50E16FFA20FA84E600330C27 /* VKService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKService.m; sourceTree = "<group>"; };
+		50E16FF120FA7F5500330C27 /* VKCLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKCLoginVC.h; sourceTree = "<group>"; };
+		50E16FF220FA7F5500330C27 /* VKCLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKCLoginVC.m; sourceTree = "<group>"; };
+		50E16FF320FA7F5500330C27 /* VKCLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VKCLoginVC.xib; sourceTree = "<group>"; };
+		50E16FF920FA84E600330C27 /* VKCService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKCService.h; sourceTree = "<group>"; };
+		50E16FFA20FA84E600330C27 /* VKCService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKCService.m; sourceTree = "<group>"; };
 		998A07568CDCCA4E78304136 /* Pods-VKClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.release.xcconfig"; sourceTree = "<group>"; };
 		F9E84EFA77732C0238FFAA95 /* Pods-VKClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.debug.xcconfig"; sourceTree = "<group>"; };
 		FE0677F12A4EA6C0BCEA115A /* Pods_VKClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,9 +97,9 @@
 		50E16FF720FA843400330C27 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
-				50E16FF120FA7F5500330C27 /* VKCLoginScreenVC.h */,
-				50E16FF220FA7F5500330C27 /* VKCLoginScreenVC.m */,
-				50E16FF320FA7F5500330C27 /* VKCLoginScreenVC.xib */,
+				50E16FF120FA7F5500330C27 /* VKCLoginVC.h */,
+				50E16FF220FA7F5500330C27 /* VKCLoginVC.m */,
+				50E16FF320FA7F5500330C27 /* VKCLoginVC.xib */,
 			);
 			path = LoginScreen;
 			sourceTree = "<group>";
@@ -107,8 +107,8 @@
 		50E16FF820FA848700330C27 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				50E16FF920FA84E600330C27 /* VKService.h */,
-				50E16FFA20FA84E600330C27 /* VKService.m */,
+				50E16FF920FA84E600330C27 /* VKCService.h */,
+				50E16FFA20FA84E600330C27 /* VKCService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -192,7 +192,7 @@
 				501BE15F20FA68F100A078F2 /* LaunchScreen.storyboard in Resources */,
 				501BE15C20FA68F100A078F2 /* Assets.xcassets in Resources */,
 				501BE15720FA68F000A078F2 /* Main.storyboard in Resources */,
-				50E16FF520FA7F5500330C27 /* VKCLoginScreenVC.xib in Resources */,
+				50E16FF520FA7F5500330C27 /* VKCLoginVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,9 +244,9 @@
 			files = (
 				501BE15A20FA68F000A078F2 /* VKClient.xcdatamodeld in Sources */,
 				501BE16220FA68F100A078F2 /* main.m in Sources */,
-				50E16FFB20FA84E600330C27 /* VKService.m in Sources */,
+				50E16FFB20FA84E600330C27 /* VKCService.m in Sources */,
 				501BE15120FA68F000A078F2 /* AppDelegate.m in Sources */,
-				50E16FF420FA7F5500330C27 /* VKCLoginScreenVC.m in Sources */,
+				50E16FF420FA7F5500330C27 /* VKCLoginVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YB636L2Y6M;
 				INFOPLIST_FILE = VKClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,7 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YB636L2Y6M;
 				INFOPLIST_FILE = VKClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
