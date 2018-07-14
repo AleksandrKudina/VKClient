@@ -14,6 +14,7 @@
 		501BE15C20FA68F100A078F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501BE15B20FA68F100A078F2 /* Assets.xcassets */; };
 		501BE15F20FA68F100A078F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501BE15D20FA68F100A078F2 /* LaunchScreen.storyboard */; };
 		501BE16220FA68F100A078F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 501BE16120FA68F100A078F2 /* main.m */; };
+		E089BC976E483CFF4B4467AC /* Pods_VKClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0677F12A4EA6C0BCEA115A /* Pods_VKClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		501BE15E20FA68F100A078F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		501BE16020FA68F100A078F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		501BE16120FA68F100A078F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		998A07568CDCCA4E78304136 /* Pods-VKClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.release.xcconfig"; sourceTree = "<group>"; };
+		F9E84EFA77732C0238FFAA95 /* Pods-VKClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.debug.xcconfig"; sourceTree = "<group>"; };
+		FE0677F12A4EA6C0BCEA115A /* Pods_VKClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E089BC976E483CFF4B4467AC /* Pods_VKClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				501BE14E20FA68F000A078F2 /* VKClient */,
 				501BE14D20FA68F000A078F2 /* Products */,
+				F6D824987E8E4E9E24F94682 /* Pods */,
+				D0FD3D60A7A6854AAD02E32C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +81,23 @@
 			path = VKClient;
 			sourceTree = "<group>";
 		};
+		D0FD3D60A7A6854AAD02E32C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE0677F12A4EA6C0BCEA115A /* Pods_VKClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6D824987E8E4E9E24F94682 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9E84EFA77732C0238FFAA95 /* Pods-VKClient.debug.xcconfig */,
+				998A07568CDCCA4E78304136 /* Pods-VKClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -81,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 501BE16520FA68F100A078F2 /* Build configuration list for PBXNativeTarget "VKClient" */;
 			buildPhases = (
+				9FD52A0DA1591763F3CE7631 /* [CP] Check Pods Manifest.lock */,
 				501BE14820FA68F000A078F2 /* Sources */,
 				501BE14920FA68F000A078F2 /* Frameworks */,
 				501BE14A20FA68F000A078F2 /* Resources */,
+				83ED9D535D8359AE88D2A76D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +164,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83ED9D535D8359AE88D2A76D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VKClient/Pods-VKClient-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/VK-ios-sdk/VK_ios_sdk.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VK_ios_sdk.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKClient/Pods-VKClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FD52A0DA1591763F3CE7631 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VKClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		501BE14820FA68F000A078F2 /* Sources */ = {
@@ -285,14 +350,12 @@
 		};
 		501BE16620FA68F100A078F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9E84EFA77732C0238FFAA95 /* Pods-VKClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VKClient/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.KudinaAG.VKClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -301,14 +364,12 @@
 		};
 		501BE16720FA68F100A078F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 998A07568CDCCA4E78304136 /* Pods-VKClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VKClient/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.KudinaAG.VKClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
