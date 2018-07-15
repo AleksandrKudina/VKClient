@@ -15,5 +15,6 @@
 - (void)checkSessionWithCompletionBlock:(void (^)(VKAuthorizationState state, NSError *error))completionBlock;
 - (void)login;
 - (void)logout;
+- (void)userNews;
 
 @end

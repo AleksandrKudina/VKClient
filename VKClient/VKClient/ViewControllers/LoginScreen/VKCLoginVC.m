@@ -39,7 +39,7 @@
 #pragma mark property
 
 - (VKCService*)vkcService
-{
+{    
     if(!_vkcService)
     {
         _vkcService = [VKCService new];
@@ -65,7 +65,7 @@
 
 - (void)showNewsScreen
 {
-    
+    [self.vkcService userNews];
 }
 
 #pragma mark VKSdkDelegate

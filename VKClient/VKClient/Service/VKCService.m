@@ -45,4 +45,15 @@
     [VKSdk forceLogout];
 }
 
+- (void)userNews
+{
+    NSTimeInterval oneHourAway = [[NSDate dateWithTimeIntervalSinceNow:3600] timeIntervalSince1970];
+    VKRequest *request = [VKApi requestWithMethod:@"newsfeed.get" andParameters:@{@"filters" : @"post", @"start_time" : @(oneHourAway)}];
+    [request executeWithResultBlock:^(VKResponse *response) {
+        
+    } errorBlock:^(NSError *error) {
+        
+    }];
+}
+
 @end
