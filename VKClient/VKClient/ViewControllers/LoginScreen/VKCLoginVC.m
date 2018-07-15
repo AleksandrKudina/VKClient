@@ -23,10 +23,11 @@
     [super viewDidLoad];
     [self setup];
     [self.vkcService initializeVKSdkWith:self];
+    __weak typeof(self)weakSelf = self;
     [self.vkcService checkSessionWithCompletionBlock:^(VKAuthorizationState state, NSError *error) {
         if(state == VKAuthorizationAuthorized)
         {
-            [self showNewsScreen];
+            [weakSelf showNewsScreen];
         }
         else if (error)
         {
