@@ -19,7 +19,7 @@
     self = [super init];
     if(self)
     {
-        _SCOPE = @[@"wall"];
+        _SCOPE = @[@"wall", @"friends"];
     }
     return self;
 }
@@ -38,6 +38,11 @@
 - (void)login
 {
     [VKSdk authorize:self.SCOPE];
+}
+
+- (void)logout
+{
+    [VKSdk forceLogout];
 }
 
 @end

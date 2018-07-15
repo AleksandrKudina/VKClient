@@ -14,5 +14,6 @@
 - (void)initializeVKSdkWith:(id<VKSdkUIDelegate, VKSdkDelegate>)delegate;
 - (void)checkSessionWithCompletionBlock:(void (^)(VKAuthorizationState state, NSError *error))completionBlock;
 - (void)login;
+- (void)logout;
 
 @end

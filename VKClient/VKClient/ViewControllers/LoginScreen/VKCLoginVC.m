@@ -26,7 +26,7 @@
     [self.vkcService checkSessionWithCompletionBlock:^(VKAuthorizationState state, NSError *error) {
         if(state == VKAuthorizationAuthorized)
         {
-            
+            [self showNewsScreen];
         }
         else if (error)
         {
@@ -46,7 +46,7 @@
     return _vkcService;
 }
 
-#pragma mark public method
+#pragma mark action
 
 - (IBAction)login:(id)sender
 {
@@ -62,29 +62,41 @@
     self.loginButton.layer.cornerRadius = 5.;
 }
 
+- (void)showNewsScreen
+{
+    
+}
+
 #pragma mark VKSdkDelegate
 
 - (void)vkSdkAccessAuthorizationFinishedWithResult:(VKAuthorizationResult *)result
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    if (result.token) {
+        [self showNewsScreen];
+    } else if (result.error) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:result.error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:okAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
 
 - (void)vkSdkUserAuthorizationFailed
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    [self.vkcService logout];
 }
 
 #pragma mark VKSdkUIDelegate
 
 - (void)vkSdkNeedCaptchaEnter:(VKError *)captchaError
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
+    VKCaptchaViewController *captchaVC = [VKCaptchaViewController captchaControllerWithError:captchaError];
+    [captchaVC presentIn:self.navigationController.topViewController];
 }
 
 - (void)vkSdkShouldPresentViewController:(UIViewController *)controller
 {
     [self.navigationController.topViewController presentViewController:controller animated:YES completion:nil];
-    NSLog(@"%s",__PRETTY_FUNCTION__);
 }
 
 @end
