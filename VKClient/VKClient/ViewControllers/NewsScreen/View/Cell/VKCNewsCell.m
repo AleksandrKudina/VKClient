@@ -7,13 +7,16 @@
 //
 
 #import "VKCNewsCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface VKCNewsCell ()
 @property (nonatomic, weak) IBOutlet UIImageView *avatarImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *newsImage;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateNewsLabel;
 @property (nonatomic, weak) IBOutlet UITextView *newsTextView;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *heightImageView;
+@property (nonatomic, strong) VKCNewsEntity *newsEntity;
 @end
 
 @implementation VKCNewsCell
@@ -21,7 +24,47 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    
+    [self setup];
 }
+
+#pragma mark public method
+
+- (void)configureWithNews:(VKCNewsEntity*)newsEntity
+{
+    self.newsEntity = newsEntity;
+}
+
+#pragma mark private method
+
+- (void)setup
+{
+    self.titleLabel.text = self.newsEntity.newsSourceName;
+    self.dateNewsLabel.text = self.newsEntity.dateNews;
+    self.newsTextView.text = self.newsEntity.textNews;
+    if(self.newsEntity.avatarImageURL.absoluteString.length > 0)
+    {
+        [self.avatarImageView sd_setImageWithURL:self.newsEntity.imageNewsURL completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            if([imageURL isEqual:self.newsEntity.imageNewsURL] && image !=nil)
+            {
+                self.avatarImageView.image = image;
+            }
+        }];
+    }
+    if(self.newsEntity.imageNewsURL.absoluteString.length > 0)
+    {
+        [self.newsImage sd_setImageWithURL:self.newsEntity.imageNewsURL completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            if([imageURL isEqual:self.newsEntity.imageNewsURL] && image !=nil)
+            {
+                self.newsImage.image = image;
+            }
+        }];
+    }
+    else
+    {
+        self.heightImageView.constant = 0.;
+    }
+}
+
+
 
 @end

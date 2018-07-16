@@ -22,10 +22,11 @@
 		50E16FFB20FA84E600330C27 /* VKCService.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E16FFA20FA84E600330C27 /* VKCService.m */; };
 		50E1700020FB4F7D00330C27 /* VKCNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E16FFE20FB4F7D00330C27 /* VKCNewsVC.m */; };
 		50E1700120FB4F7D00330C27 /* VKCNewsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E16FFF20FB4F7D00330C27 /* VKCNewsVC.xib */; };
-		E089BC976E483CFF4B4467AC /* Pods_VKClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0677F12A4EA6C0BCEA115A /* Pods_VKClient.framework */; };
+		A3BD62ED5E59CD4BDC3A6AEC /* libPods-VKClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A44F890BD9CA0543094FA5 /* libPods-VKClient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40A44F890BD9CA0543094FA5 /* libPods-VKClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		501BE14C20FA68F000A078F2 /* VKClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		501BE14F20FA68F000A078F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		501BE15020FA68F000A078F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		50E16FFF20FB4F7D00330C27 /* VKCNewsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VKCNewsVC.xib; sourceTree = "<group>"; };
 		998A07568CDCCA4E78304136 /* Pods-VKClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.release.xcconfig"; sourceTree = "<group>"; };
 		F9E84EFA77732C0238FFAA95 /* Pods-VKClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKClient/Pods-VKClient.debug.xcconfig"; sourceTree = "<group>"; };
-		FE0677F12A4EA6C0BCEA115A /* Pods_VKClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E089BC976E483CFF4B4467AC /* Pods_VKClient.framework in Frameworks */,
+				A3BD62ED5E59CD4BDC3A6AEC /* libPods-VKClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +198,7 @@
 		D0FD3D60A7A6854AAD02E32C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE0677F12A4EA6C0BCEA115A /* Pods_VKClient.framework */,
+				40A44F890BD9CA0543094FA5 /* libPods-VKClient.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 				501BE14820FA68F000A078F2 /* Sources */,
 				501BE14920FA68F000A078F2 /* Frameworks */,
 				501BE14A20FA68F000A078F2 /* Resources */,
-				83ED9D535D8359AE88D2A76D /* [CP] Embed Pods Frameworks */,
+				408365EB3DCB61D202C0803E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,22 +283,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		83ED9D535D8359AE88D2A76D /* [CP] Embed Pods Frameworks */ = {
+		408365EB3DCB61D202C0803E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VKClient/Pods-VKClient-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/VK-ios-sdk/VK_ios_sdk.framework",
+				"${SRCROOT}/Pods/Target Support Files/Pods-VKClient/Pods-VKClient-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/VK-ios-sdk/VKSdkResources.bundle",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VK_ios_sdk.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/VKSdkResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKClient/Pods-VKClient-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKClient/Pods-VKClient-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9FD52A0DA1591763F3CE7631 /* [CP] Check Pods Manifest.lock */ = {
@@ -479,10 +479,7 @@
 				DEVELOPMENT_TEAM = YB636L2Y6M;
 				INFOPLIST_FILE = VKClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.KudinaAG.VKClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -498,10 +495,7 @@
 				DEVELOPMENT_TEAM = YB636L2Y6M;
 				INFOPLIST_FILE = VKClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.KudinaAG.VKClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

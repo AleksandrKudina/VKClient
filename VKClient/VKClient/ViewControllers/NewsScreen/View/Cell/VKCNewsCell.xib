@@ -76,6 +76,7 @@
                 <outlet property="avatarImageView" destination="BaL-60-lKA" id="Da2-17-adZ"/>
                 <outlet property="dateNewsLabel" destination="Ncm-ax-AsY" id="tH4-2L-Nai"/>
                 <outlet property="heightImageView" destination="nzx-3B-p1c" id="DX8-Gt-svM"/>
+                <outlet property="newsImage" destination="rnc-LI-eiT" id="eXc-Bm-zxs"/>
                 <outlet property="newsTextView" destination="wah-ke-U2b" id="Wbe-xy-rcn"/>
                 <outlet property="titleLabel" destination="a15-LZ-ChE" id="4we-3M-Zls"/>
             </connections>
