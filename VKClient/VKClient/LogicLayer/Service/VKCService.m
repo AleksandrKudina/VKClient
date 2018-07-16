@@ -45,6 +45,11 @@
     [VKSdk forceLogout];
 }
 
+- (BOOL)isLoggedIn
+{
+    return [VKSdk isLoggedIn];
+}
+
 - (void)userNews
 {
     NSTimeInterval oneHourAway = [[NSDate dateWithTimeIntervalSinceNow:3600] timeIntervalSince1970];

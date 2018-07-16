@@ -26,17 +26,19 @@
     self.router = [VKCLoginRouter new];
     [self setup];
     [self.vkcService initializeVKSdkWith:self];
-    __weak typeof(self)weakSelf = self;
-    [self.vkcService checkSessionWithCompletionBlock:^(VKAuthorizationState state, NSError *error) {
-        if(state == VKAuthorizationAuthorized)
-        {
-            [weakSelf showNewsScreen];
-        }
-        else if (error)
-        {
-            NSLog(@"%@",error.localizedDescription);
-        }
-    }];
+    [self checkSession];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 #pragma mark property
@@ -54,16 +56,37 @@
 
 - (IBAction)login:(id)sender
 {
-    [self.vkcService login];
+    if(self.vkcService.isLoggedIn)
+    {
+        [self showNewsScreen];
+    }
+    else
+    {
+        [self.vkcService login];
+    }
 }
 
 #pragma mark private method
 
 - (void)setup
 {
-    [self.navigationController setNavigationBarHidden:YES];
     [self.loginButton setTitle:@"Login with VK" forState:UIControlStateNormal];
     self.loginButton.layer.cornerRadius = 5.;
+}
+
+- (void)checkSession
+{
+    __weak typeof(self)weakSelf = self;
+    [self.vkcService checkSessionWithCompletionBlock:^(VKAuthorizationState state, NSError *error) {
+        if(state == VKAuthorizationAuthorized)
+        {
+            [weakSelf showNewsScreen];
+        }
+        else if (error)
+        {
+            NSLog(@"%@",error.localizedDescription);
+        }
+    }];
 }
 
 - (void)showNewsScreen
