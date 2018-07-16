@@ -13,6 +13,9 @@
 		501BE15C20FA68F100A078F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501BE15B20FA68F100A078F2 /* Assets.xcassets */; };
 		501BE15F20FA68F100A078F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501BE15D20FA68F100A078F2 /* LaunchScreen.storyboard */; };
 		501BE16220FA68F100A078F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 501BE16120FA68F100A078F2 /* main.m */; };
+		5048C37D20FC73600016D19F /* VKCNewsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5048C37C20FC73600016D19F /* VKCNewsDataSource.m */; };
+		5048C38320FC79740016D19F /* VKCNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5048C38120FC79740016D19F /* VKCNewsCell.m */; };
+		5048C38420FC79740016D19F /* VKCNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5048C38220FC79740016D19F /* VKCNewsCell.xib */; };
 		50E16FF420FA7F5500330C27 /* VKCLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E16FF220FA7F5500330C27 /* VKCLoginVC.m */; };
 		50E16FF520FA7F5500330C27 /* VKCLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E16FF320FA7F5500330C27 /* VKCLoginVC.xib */; };
 		50E16FFB20FA84E600330C27 /* VKCService.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E16FFA20FA84E600330C27 /* VKCService.m */; };
@@ -31,6 +34,11 @@
 		501BE15E20FA68F100A078F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		501BE16020FA68F100A078F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		501BE16120FA68F100A078F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5048C37B20FC73600016D19F /* VKCNewsDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKCNewsDataSource.h; sourceTree = "<group>"; };
+		5048C37C20FC73600016D19F /* VKCNewsDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKCNewsDataSource.m; sourceTree = "<group>"; };
+		5048C38020FC79740016D19F /* VKCNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKCNewsCell.h; sourceTree = "<group>"; };
+		5048C38120FC79740016D19F /* VKCNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKCNewsCell.m; sourceTree = "<group>"; };
+		5048C38220FC79740016D19F /* VKCNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VKCNewsCell.xib; sourceTree = "<group>"; };
 		50E16FF120FA7F5500330C27 /* VKCLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKCLoginVC.h; sourceTree = "<group>"; };
 		50E16FF220FA7F5500330C27 /* VKCLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKCLoginVC.m; sourceTree = "<group>"; };
 		50E16FF320FA7F5500330C27 /* VKCLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VKCLoginVC.xib; sourceTree = "<group>"; };
@@ -91,6 +99,33 @@
 			path = VKClient;
 			sourceTree = "<group>";
 		};
+		5048C37A20FC73150016D19F /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5048C37B20FC73600016D19F /* VKCNewsDataSource.h */,
+				5048C37C20FC73600016D19F /* VKCNewsDataSource.m */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5048C37E20FC77530016D19F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5048C37F20FC775B0016D19F /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5048C37F20FC775B0016D19F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5048C38020FC79740016D19F /* VKCNewsCell.h */,
+				5048C38120FC79740016D19F /* VKCNewsCell.m */,
+				5048C38220FC79740016D19F /* VKCNewsCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		50E16FF620FA842000330C27 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +157,8 @@
 		50E16FFC20FB4F4A00330C27 /* NewsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				5048C37E20FC77530016D19F /* View */,
+				5048C37A20FC73150016D19F /* DataSource */,
 				50E16FFD20FB4F7D00330C27 /* VKCNewsVC.h */,
 				50E16FFE20FB4F7D00330C27 /* VKCNewsVC.m */,
 				50E16FFF20FB4F7D00330C27 /* VKCNewsVC.xib */,
@@ -205,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5048C38420FC79740016D19F /* VKCNewsCell.xib in Resources */,
 				501BE15F20FA68F100A078F2 /* LaunchScreen.storyboard in Resources */,
 				501BE15C20FA68F100A078F2 /* Assets.xcassets in Resources */,
 				501BE15720FA68F000A078F2 /* Main.storyboard in Resources */,
@@ -259,7 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5048C38320FC79740016D19F /* VKCNewsCell.m in Sources */,
 				501BE15A20FA68F000A078F2 /* VKClient.xcdatamodeld in Sources */,
+				5048C37D20FC73600016D19F /* VKCNewsDataSource.m in Sources */,
 				501BE16220FA68F100A078F2 /* main.m in Sources */,
 				50E1700020FB4F7D00330C27 /* VKCNewsVC.m in Sources */,
 				50E16FFB20FA84E600330C27 /* VKCService.m in Sources */,
