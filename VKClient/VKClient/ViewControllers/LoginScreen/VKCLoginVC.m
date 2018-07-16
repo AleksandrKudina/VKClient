@@ -8,10 +8,12 @@
 
 #import "VKCLoginVC.h"
 #import "VKCService.h"
+#import "VKCLoginRouter.h"
 
 @interface VKCLoginVC () <VKSdkDelegate, VKSdkUIDelegate>
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
 @property (nonatomic, strong) VKCService *vkcService;
+@property (nonatomic, strong) VKCLoginRouter *router;
 @end
 
 @implementation VKCLoginVC
@@ -21,6 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.router = [VKCLoginRouter new];
     [self setup];
     [self.vkcService initializeVKSdkWith:self];
     __weak typeof(self)weakSelf = self;
@@ -58,14 +61,14 @@
 
 - (void)setup
 {
-    self.title = @"Authorization";
+    [self.navigationController setNavigationBarHidden:YES];
     [self.loginButton setTitle:@"Login with VK" forState:UIControlStateNormal];
     self.loginButton.layer.cornerRadius = 5.;
 }
 
 - (void)showNewsScreen
 {
-    [self.vkcService userNews];
+    [self.router showNewsVCFromSourceVC:self];
 }
 
 #pragma mark VKSdkDelegate

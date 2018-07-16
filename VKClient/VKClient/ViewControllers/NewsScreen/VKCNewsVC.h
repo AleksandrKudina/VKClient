@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VKCNewsEntity.h"
 
 @interface VKCNewsVC : UIViewController
-
+- (void)configureWithNews:(NSArray<VKCNewsEntity*>*)news;
 @end

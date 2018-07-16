@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B27013D853C3CDBA5EC1CE4C3FB0EC5F"
+               BlueprintIdentifier = "863A9E44ACC0A9185C6A222228FAB0EE"
                BlueprintName = "VK-ios-sdk"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libVK-ios-sdk.a">

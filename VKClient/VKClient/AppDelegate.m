@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <VK_ios_sdk/VKSdk.h>
+#import <VKSdk.h>
 
 @interface AppDelegate ()
 

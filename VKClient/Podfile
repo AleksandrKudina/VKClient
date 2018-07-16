@@ -5,4 +5,5 @@ inhibit_all_warnings!
 target 'VKClient' do
 	pod "VK-ios-sdk"
     pod 'SDWebImage', '~> 4.0'
+    pod 'UIViewController+Routing', '~> 0.1'
 end

@@ -30,12 +30,23 @@
         <!--LoginVC-->
         <scene sceneID="ts6-AI-HKg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iza-DH-cgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="wj1-xf-iKo" customClass="VKCLoginVC" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="z6f-lx-Fr8"/>
+                    <connections>
+                        <segue destination="16F-wm-b5I" kind="show" identifier="showNewsVC" id="iyS-fJ-uX9"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iza-DH-cgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="876" y="157"/>
+        </scene>
+        <!--NewsVC-->
+        <scene sceneID="CcW-EX-ldB">
+            <objects>
+                <viewController id="16F-wm-b5I" customClass="VKCNewsVC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JzD-6b-BwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1694" y="157"/>
         </scene>
     </scenes>
 </document>

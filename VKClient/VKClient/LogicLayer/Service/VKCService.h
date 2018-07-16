@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <VK_ios_sdk/VKSdk.h>
+#import <VKSdk.h>
 
 @interface VKCService : NSObject
 

@@ -12,9 +12,12 @@
 @interface VKCNewsVC ()
 @property (nonatomic, weak) IBOutlet UITableView *newsTableView;
 @property (nonatomic, strong) VKCNewsDataSource *dataSource;
+@property (nonatomic, strong) NSArray<VKCNewsEntity*> *news;
 @end
 
 @implementation VKCNewsVC
+
+#pragma mark lifecycle
 
 - (void)viewDidLoad
 {
@@ -25,6 +28,11 @@
     
 }
 
+#pragma mark public method
 
+- (void)configureWithNews:(NSArray<VKCNewsEntity *> *)news
+{
+    self.news = news;
+}
 
 @end

@@ -2,21 +2,25 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - "UIViewController+Routing (0.1.1)"
   - VK-ios-sdk (1.4.6)
 
 DEPENDENCIES:
   - SDWebImage (~> 4.0)
+  - "UIViewController+Routing (~> 0.1)"
   - VK-ios-sdk
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SDWebImage
+    - "UIViewController+Routing"
     - VK-ios-sdk
 
 SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  "UIViewController+Routing": 6d34de88e5a30250d453f49ddd5993212f279b9a
   VK-ios-sdk: 7fd48bc5aaa6b96c3197c1987eb6593f2ea67331
 
-PODFILE CHECKSUM: 2cd328b10b743c238224fd3db5067ba4a833c2fc
+PODFILE CHECKSUM: 8a937ea432a0eb8fca7b8a2c94ee8a1859e4eddf
 
 COCOAPODS: 1.5.2
