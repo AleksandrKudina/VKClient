@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VKCNewsEntity.h"
 
 @interface VKCNewsCell : UITableViewCell
-
+- (void)configureWithNews:(VKCNewsEntity*)newsEntity;
 @end
