@@ -18,6 +18,7 @@
 		5048C38420FC79740016D19F /* VKCNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5048C38220FC79740016D19F /* VKCNewsCell.xib */; };
 		5048C38A20FC8D2A0016D19F /* VKCNewsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5048C38920FC8D2A0016D19F /* VKCNewsEntity.m */; };
 		5048C38E20FD353A0016D19F /* VKCLoginRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5048C38D20FD353A0016D19F /* VKCLoginRouter.m */; };
+		5048C39220FE6E2E0016D19F /* VKCNewsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5048C39120FE6E2E0016D19F /* VKCNewsService.m */; };
 		50E16FF420FA7F5500330C27 /* VKCLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E16FF220FA7F5500330C27 /* VKCLoginVC.m */; };
 		50E16FF520FA7F5500330C27 /* VKCLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E16FF320FA7F5500330C27 /* VKCLoginVC.xib */; };
 		50E16FFB20FA84E600330C27 /* VKCService.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E16FFA20FA84E600330C27 /* VKCService.m */; };
@@ -46,6 +47,8 @@
 		5048C38920FC8D2A0016D19F /* VKCNewsEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKCNewsEntity.m; sourceTree = "<group>"; };
 		5048C38C20FD353A0016D19F /* VKCLoginRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKCLoginRouter.h; sourceTree = "<group>"; };
 		5048C38D20FD353A0016D19F /* VKCLoginRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKCLoginRouter.m; sourceTree = "<group>"; };
+		5048C39020FE6E2E0016D19F /* VKCNewsService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKCNewsService.h; sourceTree = "<group>"; };
+		5048C39120FE6E2E0016D19F /* VKCNewsService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKCNewsService.m; sourceTree = "<group>"; };
 		50E16FF120FA7F5500330C27 /* VKCLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKCLoginVC.h; sourceTree = "<group>"; };
 		50E16FF220FA7F5500330C27 /* VKCLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKCLoginVC.m; sourceTree = "<group>"; };
 		50E16FF320FA7F5500330C27 /* VKCLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VKCLoginVC.xib; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 			children = (
 				50E16FF920FA84E600330C27 /* VKCService.h */,
 				50E16FFA20FA84E600330C27 /* VKCService.m */,
+				5048C39020FE6E2E0016D19F /* VKCNewsService.h */,
+				5048C39120FE6E2E0016D19F /* VKCNewsService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				5048C38A20FC8D2A0016D19F /* VKCNewsEntity.m in Sources */,
 				501BE15A20FA68F000A078F2 /* VKClient.xcdatamodeld in Sources */,
 				5048C38E20FD353A0016D19F /* VKCLoginRouter.m in Sources */,
+				5048C39220FE6E2E0016D19F /* VKCNewsService.m in Sources */,
 				5048C37D20FC73600016D19F /* VKCNewsDataSource.m in Sources */,
 				501BE16220FA68F100A078F2 /* main.m in Sources */,
 				50E1700020FB4F7D00330C27 /* VKCNewsVC.m in Sources */,
