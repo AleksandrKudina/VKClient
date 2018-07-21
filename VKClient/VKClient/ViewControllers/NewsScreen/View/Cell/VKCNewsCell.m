@@ -26,6 +26,16 @@
     [super awakeFromNib];
 }
 
+-(void)prepareForReuse
+{
+    [super prepareForReuse];
+    self.avatarImageView.image = nil;
+    self.newsImage.image = nil;
+    self.titleLabel.text = @"";
+    self.dateNewsLabel.text = @"";
+    self.newsTextView.text = @"";
+}
+
 #pragma mark public method
 
 - (void)configureWithNews:(VKCNewsEntity*)newsEntity
