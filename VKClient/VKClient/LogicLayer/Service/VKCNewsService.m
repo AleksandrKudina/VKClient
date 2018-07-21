@@ -33,6 +33,7 @@ NSString * const kProfilesLastName = @"last_name";
 NSString * const kProfilesPhoto100 = @"photo_100";
 
 NSString * const kGroups = @"groups";
+NSString * const kGroupsID = @"id";
 NSString * const kGroupsName = @"name";
 NSString * const kGroupsPhoto100 = @"photo_100";
 
@@ -66,13 +67,11 @@ NSString * const kGroupsPhoto100 = @"photo_100";
                 [self handlingProfiles:profiles forNews:news];
             }
             
-            NSArray *groups = items[kGroups];
+            NSArray *groups = item[kGroups];
             if([profiles isKindOfClass:[NSArray class]])
             {
-                
+                [self handlingGroups:groups forNews:news];
             }
-            
-            
         }
     }
     return [news copy];
@@ -139,7 +138,24 @@ NSString * const kGroupsPhoto100 = @"photo_100";
 
 - (void)handlingGroups:(NSArray*)groups forNews:(VKCNewsEntity*)news
 {
-    
+    NSUInteger index = [groups indexOfObjectPassingTest:^BOOL(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSNumber *groupID = obj[kGroupsID];
+        if(groupID.floatValue == news.sourceID.floatValue)
+        {
+            *stop = YES;
+            return YES;
+        }
+        return NO;
+    }];
+    if (index != NSNotFound)
+    {
+        NSDictionary *group = groups[index];
+        NSString *name = group[kGroupsName];
+        if([name isKindOfClass:[NSString class]])
+        {
+            news.newsSourceName = name;
+        }
+    }
 }
 
 @end
