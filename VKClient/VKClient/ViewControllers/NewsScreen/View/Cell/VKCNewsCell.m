@@ -24,7 +24,6 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self setup];
 }
 
 #pragma mark public method
@@ -32,6 +31,7 @@
 - (void)configureWithNews:(VKCNewsEntity*)newsEntity
 {
     self.newsEntity = newsEntity;
+    [self setup];
 }
 
 #pragma mark private method
@@ -39,11 +39,12 @@
 - (void)setup
 {
     self.titleLabel.text = self.newsEntity.newsSourceName;
-    self.dateNewsLabel.text = self.newsEntity.dateNews;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.newsEntity.dateNews.longLongValue];
+    self.dateNewsLabel.text = [NSString stringWithFormat:@"%@", date];
     self.newsTextView.text = self.newsEntity.textNews;
     if(self.newsEntity.avatarImageURL.absoluteString.length > 0)
     {
-        [self.avatarImageView sd_setImageWithURL:self.newsEntity.imageNewsURL completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        [self.avatarImageView sd_setImageWithURL:self.newsEntity.avatarImageURL completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
             if([imageURL isEqual:self.newsEntity.imageNewsURL] && image !=nil)
             {
                 self.avatarImageView.image = image;

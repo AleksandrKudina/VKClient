@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "VKCNewsEntity.h"
 
 @interface VKCNewsDataSource : NSObject <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) NSArray<VKCNewsEntity*> *news;
 @end

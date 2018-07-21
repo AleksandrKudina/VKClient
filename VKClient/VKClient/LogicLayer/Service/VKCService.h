@@ -19,6 +19,4 @@
 - (void)logout;
 - (BOOL)isLoggedIn;
 
-- (void)userNews;
-
 @end

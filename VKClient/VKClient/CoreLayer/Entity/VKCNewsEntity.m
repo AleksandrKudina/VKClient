@@ -9,5 +9,11 @@
 #import "VKCNewsEntity.h"
 
 @implementation VKCNewsEntity
-
+@synthesize sourceID;
+@synthesize avatarImageURL;
+@synthesize dateNews;
+@synthesize imageNewsURL;
+@synthesize newsSourceName;
+@synthesize postID;
+@synthesize textNews;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "VKCNewsService.h"
+#import <VKSdk.h>
 
 // все проверки на тип можно убрать, если полность довериться ответу сервера ВК
 
@@ -22,9 +23,9 @@ NSString * const kItemsAttachments = @"attachments";
 NSString * const kItemsAttachmentsType = @"type";
 NSString * const kItemsAttachmentsPhoto = @"photo";
 
-NSString * const kItemsAttachmentsPhotoSizes = @"sizes";
+    NSString * const kItemsAttachmentsPhotoSizes = @"sizes";
 NSString * const kItemsAttachmentsPhotoSizesType = @"p";
-NSString * const kItemsAttachmentsPhotoSizesURL = @"url";
+NSString * const kItemsAttachmentsPhotoSizesURL = @"src";
 
 NSString * const kProfiles = @"profiles";
 NSString * const kProfilesID = @"id";
@@ -41,9 +42,29 @@ NSString * const kGroupsPhoto100 = @"photo_100";
 
 #pragma mark public method
 
+
+- (void)userNewsWithCompletionBlock:(void(^)(NSArray<VKCNewsEntity*> *news))completionBlock
+{
+    NSTimeInterval oneHourAway = [[NSDate dateWithTimeIntervalSinceNow:3600] timeIntervalSince1970];
+    VKRequest *request = [VKApi requestWithMethod:@"newsfeed.get" andParameters:@{@"filters" : @"post", @"start_time" : @(oneHourAway), @"photo_sizes" : @1}];
+    [request executeWithResultBlock:^(VKResponse *response) {
+        if([response.json isKindOfClass:[NSDictionary class]])
+        {
+            NSArray<VKCNewsEntity*>* newsEntity = [self newsListFromResponse:response.json];
+            if(completionBlock)
+            {
+                completionBlock(newsEntity);
+            }
+        }
+    } errorBlock:^(NSError *error) {
+        
+    }];
+}
+
+
 - (NSArray<VKCNewsEntity*>*)newsListFromResponse:(NSDictionary*)response;
 {
-    NSMutableArray<VKCNewsEntity*> *news = [NSMutableArray new];
+    NSMutableArray<VKCNewsEntity*> *newsArray = [NSMutableArray new];
     NSArray *items = response[kResponseItems];
     if([items isKindOfClass:[NSArray class]])
     {
@@ -61,20 +82,21 @@ NSString * const kGroupsPhoto100 = @"photo_100";
                 [self handlingAttachments:attachments forNews:news];
             }
             
-            NSArray *profiles = item[kProfiles];
+            NSArray *profiles = response[kProfiles];
             if([profiles isKindOfClass:[NSArray class]])
             {
                 [self handlingProfiles:profiles forNews:news];
             }
             
-            NSArray *groups = item[kGroups];
-            if([profiles isKindOfClass:[NSArray class]])
+            NSArray *groups = response[kGroups];
+            if([groups isKindOfClass:[NSArray class]])
             {
                 [self handlingGroups:groups forNews:news];
             }
+            [newsArray addObject:news];
         }
     }
-    return [news copy];
+    return [newsArray copy];
 }
 
 #pragma mark private method
@@ -133,6 +155,11 @@ NSString * const kGroupsPhoto100 = @"photo_100";
         {
             news.newsSourceName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
         }
+        NSString *URLString = profile[kProfilesPhoto100];
+        if([URLString isKindOfClass:[NSString class]])
+        {
+            news.avatarImageURL = [NSURL URLWithString:URLString];
+        }
     }
 }
 
@@ -140,7 +167,7 @@ NSString * const kGroupsPhoto100 = @"photo_100";
 {
     NSUInteger index = [groups indexOfObjectPassingTest:^BOOL(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSNumber *groupID = obj[kGroupsID];
-        if(groupID.floatValue == news.sourceID.floatValue)
+        if(groupID.floatValue * -1 == news.sourceID.floatValue)
         {
             *stop = YES;
             return YES;
@@ -154,6 +181,11 @@ NSString * const kGroupsPhoto100 = @"photo_100";
         if([name isKindOfClass:[NSString class]])
         {
             news.newsSourceName = name;
+        }
+        NSString *URLString = group[kGroupsPhoto100];
+        if([URLString isKindOfClass:[NSString class]])
+        {
+            news.avatarImageURL = [NSURL URLWithString:URLString];
         }
     }
 }

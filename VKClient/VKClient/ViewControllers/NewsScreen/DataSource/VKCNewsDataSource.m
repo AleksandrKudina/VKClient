@@ -22,11 +22,17 @@
     [_tableView reloadData];
 }
 
+- (void)setNews:(NSArray *)news
+{
+    _news = news;
+    [_tableView reloadData];
+}
+
 #pragma mark private method
 
 - (void)setup
 {
-    //register cell
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([VKCNewsCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([VKCNewsCell class])];
     self.tableView.estimatedRowHeight = 120;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
@@ -35,12 +41,14 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    return [VKCNewsCell new];
+    VKCNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([VKCNewsCell class])];
+    [cell configureWithNews:self.news[indexPath.row]];
+    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.news.count;
 }
 
 @end

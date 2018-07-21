@@ -11,6 +11,7 @@
 
 @interface VKCNewsService : NSObject
 
+- (void)userNewsWithCompletionBlock:(void(^)(NSArray<VKCNewsEntity*> *news))completionBlock;
 - (NSArray<VKCNewsEntity*>*)newsListFromResponse:(NSArray<NSDictionary*>*)response;
 
 @end
